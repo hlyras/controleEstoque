@@ -12,6 +12,8 @@ router.get('/', function(req, res, next) {
 
 router.post('/produto/salvar', function(req, res, next){
   var produto = new Produto();
+  console.log("=========================")
+  console.log(req.body.nomeProduto);
   produto.nome = req.body.nomeProduto;
   produto.descricao = req.body.descricaoProduto;
   if(req.body.idProduto == ""){
@@ -20,11 +22,9 @@ router.post('/produto/salvar', function(req, res, next){
   res.redirect("/");
 });
 
-router.get('/produto/buscar', function(req, res, next){
-  var nome = req.body.procurarProduto
-  console.log("============")
-  console.log(nome)
-  var produto = Produto.buscar(nome);
-})
+router.post('/produto/buscar', function(req, res, next){
+  var produto = Produto.buscar(req.body.procurarProduto);
+  console.log(produto);
+});
 
 module.exports = router;

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> Estoque </title>
+    <title>Estoque</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <form action="/produto/buscar" method="get">
-      Buscar: <input type="text" name="procurarProduto" id="procurarProduto"><input type="submit" value="buscar">
+    <form action="/produto/buscar" method="post">
+    Buscar: <input type="text" name="procurarProduto" id="procurarProduto">
+    <input type="submit" value="buscar">
+    
   </form>
     <h1> Controle de Estoque </h1>
     <hr>
@@ -18,8 +20,11 @@
     <input type="text" name="descricaoProduto" id="descricaoProduto"><br><br>
     <input type="submit" value="salvar">
     <hr>
-  </form>
 
+
+    <h1>Informações do produto</h1>
+  </form>
+  <table id="produtos" border="1">
 
   </body>
 </html>

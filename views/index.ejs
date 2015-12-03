@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= Estoque %></title>
+    <title> Estoque </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= Controle de Estoque %></h1>
+    <form action="/produto/buscar" method="get">
+      Buscar: <input type="text" name="procurarProduto" id="procurarProduto"><input type="submit" value="buscar">
+  </form>
+    <h1> Controle de Estoque </h1>
+    <hr>
+    <form action="/produto/salvar" method="post">
     Nome:<br>
-    <input type="text" name="nomeP" id="nomeProduto"><br><br>
-    Preço:<br>
-    <input type="text" name="precoP" id="precoProduto"><br><br>
+    <input type="text" name="nomeProduto" id="nomeProduto"><br><br>
+    <input type="hidden" name="idProduto" id="idProduto">
+    Descrição:<br>
+    <input type="text" name="descricaoProduto" id="descricaoProduto"><br><br>
     <input type="submit" value="salvar">
+    <hr>
+  </form>
+
+
   </body>
 </html>

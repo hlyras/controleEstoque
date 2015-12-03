@@ -1,24 +1,38 @@
 var Produto = function(){
+  this.id;
   this.nome;
-  this.preco;
-  this.qtdMin;
-  this.undMedida;
-  this.tipo;
+  this.descricao;
 
   this.salvar = function(){
     this.id = (Produto.dados.length + 1);
-    Produt.dados.push(this)
+    Produto.dados.push(this)
+  }
+
+  this.buscar = function(){
+    
   }
 }
 
 Produto.dados = [];
 
+Produto.buscarPorId = function(id){
+  for(i=0; i<Produto.dados.length; i++){
+    var c = Produto.dados[i];
+    if(c.id == id){
+      return c;
+    }
+  }
+}
 
-
-
+Produto.buscar = function(nome){
+  for(i=0; i<Produto.dados.length; i++){
+    var c = Produto.dados[i];
+    if(c.nome == nome){
+      console.log("===========BuscarPorNome========")
+      console.log(c)
+      return c;
+    }
+  }
+}
 
 module.exports = Produto;
-
-
-
-
